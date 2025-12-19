@@ -209,11 +209,10 @@ export default function App() {
           {!image ? (
             <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-center p-6 border-2 border-dashed border-slate-800 rounded-xl bg-slate-900/50 backdrop-blur-sm">
               <div className="relative w-32 h-32 mb-6 flex items-center justify-center">
-                <div className="absolute inset-0 border-4 border-slate-700/30 rounded-full border-t-blue-400 animate-[spin_3s_linear_infinite]" />
-                <div className="relative group-hover:scale-110 transition-transform duration-500">
+                <div className="relative">
                   <Monitor size={48} className="text-white rotate-90 opacity-20" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <RefreshCw size={32} className="text-blue-400 animate-pulse" />
+                    <RefreshCw size={32} className="text-blue-400" />
                   </div>
                 </div>
               </div>
