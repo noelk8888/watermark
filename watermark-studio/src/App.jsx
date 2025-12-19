@@ -11,7 +11,7 @@ export default function App() {
   const [logo, setLogo] = useState(null);
   const [fontSize, setFontSize] = useState(40);
   const [opacity, setOpacity] = useState(0.7);
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#ff0000');
   const [posX, setPosX] = useState(50); // Percentage 0-100
   const [posY, setPosY] = useState(50); // Percentage 0-100
   const [rotation, setRotation] = useState(0); // Degrees -180 to 180
