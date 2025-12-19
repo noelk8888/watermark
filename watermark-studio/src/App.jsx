@@ -233,7 +233,7 @@ export default function App() {
               {watermarkType === 'text' ? (
                 <div className="space-y-3 animate-in fade-in duration-300">
                   <div>
-                    <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider">Content</label>
+
                     <input
                       type="text"
                       value={text}
@@ -242,7 +242,7 @@ export default function App() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider">Color</label>
+
                     <div className="flex items-center gap-3 bg-slate-950 border border-slate-700 rounded-lg p-2">
                       <input
                         type="color"
@@ -289,47 +289,57 @@ export default function App() {
 
               {/* Common Controls */}
               <div className="pt-6 border-t border-slate-800 space-y-3">
-                <div>
-                  <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider flex items-center justify-between">
-                    <span>Opacity</span>
-                    <span className="text-blue-400 font-mono">{Math.round(opacity * 100)}%</span>
-                  </label>
-                  <input
-                    type="range" min="0" max="1" step="0.05"
-                    value={opacity} onChange={(e) => setOpacity(Number(e.target.value))}
-                    className="w-full accent-blue-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-                  />
-                </div>
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider flex items-center justify-between">
+                      <span>Opacity</span>
+                      <span className="text-blue-400 font-mono">{Math.round(opacity * 100)}%</span>
+                    </label>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="range" min="0" max="1" step="0.05"
+                        value={opacity} onChange={(e) => setOpacity(Number(e.target.value))}
+                        className="w-full accent-blue-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                      />
+                    </div>
+                  </div>
 
-                <div>
-                  <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider flex items-center justify-between">
-                    <span>Rotation</span>
-                    <span className="text-blue-400 font-mono">{rotation}°</span>
-                  </label>
-                  <div className="flex items-center gap-3">
-                    <RotateCw className="w-4 h-4 text-slate-600" style={{ transform: 'scaleX(-1)' }} />
-                    <input
-                      type="range" min="-180" max="180"
-                      value={rotation} onChange={(e) => setRotation(Number(e.target.value))}
-                      className="w-full accent-blue-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-                    />
-                    <RotateCw className="w-4 h-4 text-slate-600" />
+                  <div className="flex-1">
+                    <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider flex items-center justify-between">
+                      <span>Rotation</span>
+                      <span className="text-blue-400 font-mono">{rotation}°</span>
+                    </label>
+                    <div className="flex items-center gap-2">
+                      {/* Removed extra icons for space */}
+                      <input
+                        type="range" min="-180" max="180"
+                        value={rotation} onChange={(e) => setRotation(Number(e.target.value))}
+                        className="w-full accent-blue-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider">Position</label>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <span className="text-[10px] text-slate-600 uppercase mb-1 block">Horizontal</span>
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider flex items-center justify-between">
+                      <span>Horizontal</span>
+                      <span className="text-blue-400 font-mono">{posX}%</span>
+                    </label>
+                    <div className="flex items-center gap-2">
                       <input
                         type="range" min="0" max="100"
                         value={posX} onChange={(e) => setPosX(Number(e.target.value))}
                         className="w-full accent-blue-500 h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer"
                       />
                     </div>
-                    <div>
-                      <span className="text-[10px] text-slate-600 uppercase mb-1 block">Vertical</span>
+                  </div>
+                  <div className="flex-1">
+                    <label className="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-wider flex items-center justify-between">
+                      <span>Vertical</span>
+                      <span className="text-blue-400 font-mono">{posY}%</span>
+                    </label>
+                    <div className="flex items-center gap-2">
                       <input
                         type="range" min="0" max="100"
                         value={posY} onChange={(e) => setPosY(Number(e.target.value))}
@@ -337,19 +347,19 @@ export default function App() {
                       />
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex gap-2 mt-3">
-                    <button onClick={() => { setPosX(5); setPosY(5) }} className="flex-1 py-1 px-2 text-[10px] uppercase font-bold tracking-wide bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded border border-slate-700 transition-colors">Top Left</button>
-                    <button onClick={() => { setPosX(50); setPosY(50) }} className="flex-1 py-1 px-2 text-[10px] uppercase font-bold tracking-wide bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded border border-slate-700 transition-colors">Center</button>
-                    <button onClick={() => { setPosX(95); setPosY(95) }} className="flex-1 py-1 px-2 text-[10px] uppercase font-bold tracking-wide bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded border border-slate-700 transition-colors">Btm Right</button>
-                  </div>
+                <div className="flex gap-2 mt-3">
+                  <button onClick={() => { setPosX(5); setPosY(5) }} className="flex-1 py-1 px-2 text-[10px] uppercase font-bold tracking-wide bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded border border-slate-700 transition-colors">Top Left</button>
+                  <button onClick={() => { setPosX(50); setPosY(50) }} className="flex-1 py-1 px-2 text-[10px] uppercase font-bold tracking-wide bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded border border-slate-700 transition-colors">Center</button>
+                  <button onClick={() => { setPosX(95); setPosY(95) }} className="flex-1 py-1 px-2 text-[10px] uppercase font-bold tracking-wide bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded border border-slate-700 transition-colors">Btm Right</button>
                 </div>
               </div>
 
               {/* Template System */}
               <div className="pt-6 border-t border-slate-800 space-y-3">
                 <div className="flex items-center justify-between">
-                  <label className="block text-xs font-bold uppercase text-slate-500 tracking-wider">Templates</label>
+                  <label className="block text-xs font-bold uppercase text-slate-500 tracking-wider">Save up to 5 Templates</label>
                   <span className="text-[10px] text-slate-600 bg-slate-900 px-2 py-0.5 rounded-full border border-slate-800">{savedTemplates.length}/5</span>
                 </div>
 
@@ -418,7 +428,7 @@ export default function App() {
         <div className="flex-1 bg-slate-950 p-4 md:p-10 flex flex-col items-center justify-center overflow-hidden relative">
           {!image ? (
             <div className="text-center animate-in zoom-in duration-300">
-              <label className="cursor-pointer group relative flex flex-col items-center justify-center w-64 h-80 border-2 border-slate-700/50 border-dashed rounded-lg hover:bg-slate-900/40 transition-all hover:border-slate-500">
+              <label className="cursor-pointer group relative flex flex-col items-center justify-center w-[300px] h-[450px] border-2 border-slate-700/50 border-dashed rounded-lg hover:bg-slate-900/40 transition-all hover:border-slate-500">
                 <div className="flex flex-col items-center justify-center pt-5 pb-6 px-4">
                   <div className="mb-4 text-slate-500 group-hover:text-blue-400 transition-colors">
                     <Upload size={32} />
@@ -447,19 +457,6 @@ export default function App() {
               </div>
             </div>
           )}
-
-          {/* Floating Toolbar (New) */}
-          <div className="absolute bottom-6 right-6 flex flex-col gap-2 bg-slate-900/90 backdrop-blur-md p-1.5 rounded-full border border-slate-800 shadow-xl z-20">
-            <button className="p-2.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-colors" title="Layout">
-              <LayoutGrid size={18} />
-            </button>
-            <button className="p-2.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-colors" title="Effects">
-              <Sparkles size={18} />
-            </button>
-            <button className="p-2.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-colors" title="Fit Screen">
-              <Maximize size={18} />
-            </button>
-          </div>
         </div>
       </div>
     </div>
