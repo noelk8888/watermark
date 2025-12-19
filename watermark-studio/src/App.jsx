@@ -7,7 +7,7 @@ export default function App() {
   const [watermarkType, setWatermarkType] = useState('text'); // 'text' or 'image'
 
   // Watermark Settings
-  const [text, setText] = useState('My Watermark');
+  const [text, setText] = useState('YOUR TEXT HERE');
   const [logo, setLogo] = useState(null);
   const [fontSize, setFontSize] = useState(40);
   const [opacity, setOpacity] = useState(0.7);
