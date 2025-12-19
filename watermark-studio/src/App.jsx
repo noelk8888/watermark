@@ -1,3 +1,4 @@
+import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Type, Image as ImageIcon, Download, Settings, X, RotateCw, Save, Trash2, LayoutTemplate, FileCode, Play, Monitor, Share2, Undo2, Redo2, Cloud, RefreshCw, PanelLeft, MousePointer2, LayoutGrid, Sparkles, Maximize } from 'lucide-react';
 import rotateIcon from './assets/rotate-phone.png';
 
