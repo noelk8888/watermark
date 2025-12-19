@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Type, Image as ImageIcon, Download, Settings, X, RotateCw, Save, Trash2, LayoutTemplate, FileCode, Play, Monitor, Share2, Undo2, Redo2, Cloud, RefreshCw, PanelLeft, MousePointer2, LayoutGrid, Sparkles, Maximize } from 'lucide-react';
-import rotateIcon from './assets/rotate-phone.png';
 
 export default function App() {
   const [image, setImage] = useState(null);
@@ -209,23 +208,14 @@ export default function App() {
 
           {!image ? (
             <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-center p-6 border-2 border-dashed border-slate-800 rounded-xl bg-transparent">
-              <div
-                style={{
-                  width: '140px',
-                  height: '140px',
-                  backgroundColor: '#ffffff',
-                  maskImage: `url(${rotateIcon})`,
-                  WebkitMaskImage: `url(${rotateIcon})`,
-                  maskSize: 'contain',
-                  WebkitMaskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  WebkitMaskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskPosition: 'center',
-                  opacity: 0.95
-                }}
-                className="mb-8"
-              />
+              <div className="relative w-32 h-32 mb-8 flex items-center justify-center">
+                {/* Static Phone Outline */}
+                <Monitor size={56} className="text-white rotate-90 opacity-20" />
+                {/* Static Rotation Arrow */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <RotateCw size={36} className="text-blue-400" />
+                </div>
+              </div>
               <p className="text-lg font-semibold text-slate-300">Rotate your phone to use this app</p>
             </div>
           ) : (
