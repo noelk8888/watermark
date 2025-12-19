@@ -208,7 +208,7 @@ export default function App() {
 
           {!image ? (
             <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-center p-4 border-2 border-dashed border-slate-700/50 rounded-xl bg-slate-800/30">
-              <p className="mb-4 text-sm">Upload an image to start editing</p>
+              <p className="mb-4 text-lg font-semibold">Rotate your phone to use this app</p>
             </div>
           ) : (
             <div className="space-y-6 pb-6">
