@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
 import { Upload, Type, Image as ImageIcon, Download, Settings, X, RotateCw, Save, Trash2, LayoutTemplate, FileCode, Play, Monitor, Share2, Undo2, Redo2, Cloud, RefreshCw, PanelLeft, MousePointer2, LayoutGrid, Sparkles, Maximize } from 'lucide-react';
+import rotateIcon from './assets/rotate-phone.png';
 
 export default function App() {
   const [image, setImage] = useState(null);
@@ -208,14 +208,12 @@ export default function App() {
 
           {!image ? (
             <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-center p-6 border-2 border-dashed border-slate-800 rounded-xl bg-slate-900/50 backdrop-blur-sm">
-              <div className="relative w-32 h-32 mb-6 flex items-center justify-center">
-                <div className="relative">
-                  <Monitor size={48} className="text-white rotate-90 opacity-20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <RefreshCw size={32} className="text-blue-400" />
-                  </div>
-                </div>
-              </div>
+              <img
+                src={rotateIcon}
+                alt="Rotate Phone"
+                className="w-32 h-32 mb-6 opacity-90 brightness-0 invert"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
               <p className="text-lg font-semibold text-slate-300">Rotate your phone to use this app</p>
             </div>
           ) : (
