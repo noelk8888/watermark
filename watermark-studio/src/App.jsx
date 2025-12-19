@@ -201,7 +201,7 @@ export default function App() {
       {/* Main Content Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Sidebar Controls */}
-        <div className="w-80 bg-slate-900/50 backdrop-blur-sm border-r border-slate-800 p-6 flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 h-full">
+        <div className="w-[358px] bg-slate-900/50 backdrop-blur-sm border-r border-slate-800 p-6 flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 h-full">
           <h1 className="text-xl font-bold mb-8 flex items-center gap-2 text-blue-400">
             <Settings className="w-5 h-5" /> Watermark Pro
           </h1>
