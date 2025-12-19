@@ -208,12 +208,24 @@ export default function App() {
           </h1>
 
           {!image ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-center p-6 border-2 border-dashed border-slate-800 rounded-xl bg-slate-900/50 backdrop-blur-sm">
-              <img
-                src={rotateIcon}
-                alt="Rotate Phone"
-                className="w-32 h-32 mb-6 opacity-90 brightness-0 invert"
-                style={{ filter: 'brightness(0) invert(1)' }}
+            <div className="flex-1 flex flex-col items-center justify-center text-slate-500 text-center p-6 border-2 border-dashed border-slate-800 rounded-xl bg-transparent">
+              <div
+                style={{
+                  width: '140px',
+                  height: '140px',
+                  backgroundColor: '#ffffff',
+                  maskImage: `url(${rotateIcon})`,
+                  WebkitMaskImage: `url(${rotateIcon})`,
+                  maskSize: 'contain',
+                  WebkitMaskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskPosition: 'center',
+                  maskMode: 'luminance',
+                  WebkitMaskMode: 'luminance'
+                }}
+                className="mb-8"
               />
               <p className="text-lg font-semibold text-slate-300">Rotate your phone to use this app</p>
             </div>
